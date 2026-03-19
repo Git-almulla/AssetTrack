@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild -version)",
+      "Read(//Users/abdelrahmanalmulla/Developer/**)",
+      "Bash(npm create:*)",
+      "Bash(yes \"\")",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
