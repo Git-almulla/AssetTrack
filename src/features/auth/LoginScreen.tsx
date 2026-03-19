@@ -6,6 +6,7 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores';
+import { Logo } from '../../components';
 
 export default function LoginScreen() {
   const navigate = useNavigate();
@@ -43,7 +44,9 @@ export default function LoginScreen() {
       <div className="w-full max-w-md">
         {/* Logo / Branding */}
         <div className="text-center mb-8">
-          <img src="/logo.svg" alt="Indectra" className="h-14 mx-auto mb-3" />
+          <div className="flex justify-center mb-3">
+            <Logo size="lg" />
+          </div>
           <p className="text-sm text-gray-500 tracking-wide uppercase">Smart Asset Tracking System</p>
         </div>
 

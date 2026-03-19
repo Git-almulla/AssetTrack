@@ -1,6 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { useOnlineStatus } from './hooks';
-import { OfflineBanner } from './components';
+import { OfflineBanner, Logo } from './components';
 import { useAuthStore, useAlertStore } from './stores';
 
 // Feature screens
@@ -23,8 +23,8 @@ function AppShell() {
 
       {/* Top header bar */}
       <header className="flex items-center justify-between px-4 py-2.5 bg-white border-b border-gray-200 shrink-0">
-        <div className="flex items-center gap-2.5">
-          <img src="/logo.svg" alt="Indectra" className="h-7" />
+        <div className="flex items-center">
+          <Logo size="sm" />
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-gray-500">{user?.name}</span>
