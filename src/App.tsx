@@ -23,13 +23,12 @@ function AppShell() {
 
       {/* Top header bar */}
       <header className="flex items-center justify-between px-4 py-2.5 bg-white border-b border-gray-200 shrink-0">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">📡</span>
-          <h1 className="text-lg font-bold text-gray-900">AssetTrack</h1>
+        <div className="flex items-center gap-2.5">
+          <img src="/logo.svg" alt="Indectra" className="h-7" />
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-gray-500">{user?.name}</span>
-          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium capitalize">
+          <span className="text-xs bg-red-50 text-red-700 px-2 py-0.5 rounded-full font-medium capitalize">
             {user?.role?.replace('_', ' ')}
           </span>
           <button
@@ -82,7 +81,7 @@ function TabLink({
       to={to}
       className={({ isActive }) =>
         `relative flex flex-col items-center gap-0.5 text-xs font-medium transition-colors ${
-          isActive ? 'text-blue-600' : 'text-gray-500 hover:text-gray-700'
+          isActive ? 'text-[#C84632]' : 'text-gray-500 hover:text-gray-700'
         }`
       }
     >

@@ -81,7 +81,7 @@ export default function AlertList() {
               onClick={() => setFilter(opt.value)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
                 filter === opt.value
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-[#C84632] text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -121,7 +121,7 @@ export default function AlertList() {
                   ${
                     alert.isRead
                       ? 'bg-white border-gray-100 hover:border-gray-200'
-                      : 'bg-blue-50 border-blue-200 hover:border-blue-300'
+                      : 'bg-red-50 border-red-200 hover:border-red-300'
                   }`}
               >
                 {/* Icon */}
@@ -134,12 +134,12 @@ export default function AlertList() {
                       {alert.assetName}
                     </span>
                     <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
-                      alert.isRead ? 'bg-gray-100 text-gray-500' : 'bg-blue-100 text-blue-700'
+                      alert.isRead ? 'bg-gray-100 text-gray-500' : 'bg-red-100 text-red-700'
                     }`}>
                       {alertTypeLabel(alert.type)}
                     </span>
                     {!alert.isRead && (
-                      <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                      <span className="w-2 h-2 rounded-full bg-[#C84632] shrink-0" />
                     )}
                   </div>
                   <p className={`text-sm ${alert.isRead ? 'text-gray-500' : 'text-gray-700'}`}>

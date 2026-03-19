@@ -71,7 +71,7 @@ export default function AssetDetail() {
           >
             ←
           </button>
-          <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl">
+          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl">
             {typeIcon(asset.type)}
           </div>
           <div className="flex-1 min-w-0">
@@ -92,7 +92,7 @@ export default function AssetDetail() {
                 );
               }
             }}
-            className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl
+            className="flex-1 py-3 bg-[#C84632] hover:bg-[#B03D2B] text-white font-semibold rounded-xl
                        transition-colors text-center"
           >
             Navigate Here 🧭

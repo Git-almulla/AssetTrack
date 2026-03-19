@@ -1,6 +1,10 @@
 // App-wide constants
 
-export const APP_NAME = 'AssetTrack';
+export const APP_NAME = 'Indectra';
+
+// Brand colors
+export const BRAND_RED = '#C84632';
+export const BRAND_BROWN = '#4A3728';
 
 // Map defaults (Dubai area — matches PRD fixture coordinates)
 export const DEFAULT_MAP_CENTER = { lat: 25.2048, lng: 55.2708 };

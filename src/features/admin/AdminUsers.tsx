@@ -9,7 +9,7 @@ import AdminNav from './AdminNav';
 
 const roleBadge: Record<UserRole, { bg: string; text: string; label: string }> = {
   admin: { bg: 'bg-purple-100', text: 'text-purple-700', label: 'Admin' },
-  manager: { bg: 'bg-blue-100', text: 'text-blue-700', label: 'Manager' },
+  manager: { bg: 'bg-red-100', text: 'text-red-700', label: 'Manager' },
   field_worker: { bg: 'bg-green-100', text: 'text-green-700', label: 'Field Worker' },
 };
 
@@ -42,7 +42,7 @@ export default function AdminUsers() {
           <h2 className="text-lg font-bold text-gray-900">Users ({users.length})</h2>
           <button
             onClick={() => setShowInvite(!showInvite)}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-xl transition-colors"
+            className="px-4 py-2 bg-[#C84632] hover:bg-[#B03D2B] text-white text-sm font-medium rounded-xl transition-colors"
           >
             + Invite User
           </button>
@@ -50,7 +50,7 @@ export default function AdminUsers() {
 
         {/* Invite form */}
         {showInvite && (
-          <div className="bg-white rounded-xl border border-blue-200 p-4 mb-4 space-y-3">
+          <div className="bg-white rounded-xl border border-red-200 p-4 mb-4 space-y-3">
             <h3 className="text-sm font-semibold text-gray-700">Invite New User</h3>
             <div className="flex gap-3">
               <input
@@ -58,12 +58,12 @@ export default function AdminUsers() {
                 placeholder="Email address"
                 value={inviteEmail}
                 onChange={(e) => setInviteEmail(e.target.value)}
-                className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C84632]"
               />
               <select
                 value={inviteRole}
                 onChange={(e) => setInviteRole(e.target.value as UserRole)}
-                className="px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C84632]"
               >
                 <option value="field_worker">Field Worker</option>
                 <option value="manager">Manager</option>
@@ -71,7 +71,7 @@ export default function AdminUsers() {
               </select>
               <button
                 onClick={handleInvite}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                className="px-4 py-2 bg-[#C84632] hover:bg-[#B03D2B] text-white text-sm font-medium rounded-lg transition-colors"
               >
                 Send Invite
               </button>

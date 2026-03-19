@@ -105,7 +105,7 @@ export default function AssetList() {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50
                        text-sm text-gray-900 placeholder-gray-400
-                       focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+                       focus:outline-none focus:ring-2 focus:ring-[#C84632] focus:bg-white"
           />
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
           {searchQuery && (
@@ -127,7 +127,7 @@ export default function AssetList() {
                 onClick={() => setFilterStatus(opt.value)}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                   filterStatus === opt.value
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-[#C84632] text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -140,7 +140,7 @@ export default function AssetList() {
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortKey)}
             className="text-xs text-gray-500 bg-transparent border border-gray-200 rounded-lg px-2 py-1.5
-                       focus:outline-none focus:ring-1 focus:ring-blue-500"
+                       focus:outline-none focus:ring-1 focus:ring-[#C84632]"
           >
             <option value="name">Name A–Z</option>
             <option value="lastSeenAt">Last Updated</option>
@@ -178,11 +178,11 @@ export default function AssetList() {
                 key={asset.id}
                 onClick={() => navigate(`/assets/${asset.id}`)}
                 className="w-full bg-white rounded-xl p-4 flex items-center gap-4 shadow-sm
-                           border border-gray-100 hover:border-blue-200 hover:shadow-md
+                           border border-gray-100 hover:border-[#C8463240] hover:shadow-md
                            transition-all text-left"
               >
                 {/* Type icon */}
-                <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center text-xl shrink-0">
+                <div className="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center text-xl shrink-0">
                   {typeIcon(asset.type)}
                 </div>
 

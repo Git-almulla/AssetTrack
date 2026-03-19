@@ -61,7 +61,7 @@ export default function AdminGateway() {
             <select
               value={config.lnsType}
               onChange={(e) => setConfig({ ...config, lnsType: e.target.value as GatewayConfig['lnsType'] })}
-              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C84632]"
             >
               <option value="ttn">The Things Network (TTN)</option>
               <option value="chirpstack">ChirpStack</option>
@@ -80,7 +80,7 @@ export default function AdminGateway() {
               value={config.apiEndpoint}
               onChange={(e) => setConfig({ ...config, apiEndpoint: e.target.value })}
               placeholder="https://eu1.cloud.thethings.network/api/v3"
-              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C84632]"
             />
           </div>
 
@@ -94,7 +94,7 @@ export default function AdminGateway() {
               value={config.apiKey}
               onChange={(e) => setConfig({ ...config, apiKey: e.target.value })}
               placeholder="Enter your LNS API key"
-              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2.5 rounded-lg border border-gray-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[#C84632]"
             />
           </div>
 
@@ -128,7 +128,7 @@ export default function AdminGateway() {
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white text-sm font-medium rounded-xl transition-colors"
+              className="px-5 py-2.5 bg-[#C84632] hover:bg-[#B03D2B] disabled:bg-[#C8463280] text-white text-sm font-medium rounded-xl transition-colors"
             >
               {isSaving ? 'Saving...' : 'Save Configuration'}
             </button>

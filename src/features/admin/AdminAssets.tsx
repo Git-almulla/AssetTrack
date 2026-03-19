@@ -129,7 +129,7 @@ export default function AdminAssets() {
           <h2 className="text-lg font-bold text-gray-900">Assets ({assets.length})</h2>
           <button
             onClick={openAddForm}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-xl transition-colors"
+            className="px-4 py-2 bg-[#C84632] hover:bg-[#B03D2B] text-white text-sm font-medium rounded-xl transition-colors"
           >
             + Add Asset
           </button>
@@ -137,7 +137,7 @@ export default function AdminAssets() {
 
         {/* Add / Edit form */}
         {showForm && (
-          <div className="bg-white rounded-xl border border-blue-200 shadow-sm p-5 mb-4 space-y-4 animate-slide-up">
+          <div className="bg-white rounded-xl border border-red-200 shadow-sm p-5 mb-4 space-y-4 animate-slide-up">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-bold text-gray-800">
                 {editingAsset ? `Edit: ${editingAsset.name}` : 'Add New Asset'}
@@ -155,7 +155,7 @@ export default function AdminAssets() {
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="e.g. Excavator 06"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm
-                             focus:outline-none focus:ring-2 focus:ring-blue-500"
+                             focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                 />
               </div>
 
@@ -171,13 +171,13 @@ export default function AdminAssets() {
                       onChange={(e) => setNewTypeName(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && addCustomType()}
                       placeholder="New type name"
-                      className="flex-1 px-3 py-2 rounded-lg border border-blue-300 text-sm
-                                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-3 py-2 rounded-lg border border-red-300 text-sm
+                                 focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                     />
                     <button
                       onClick={addCustomType}
                       disabled={!newTypeName.trim()}
-                      className="px-3 py-2 bg-blue-600 disabled:bg-blue-300 text-white text-xs font-medium rounded-lg"
+                      className="px-3 py-2 bg-[#C84632] disabled:bg-[#C8463280] text-white text-xs font-medium rounded-lg"
                     >
                       Add
                     </button>
@@ -194,7 +194,7 @@ export default function AdminAssets() {
                       value={form.type}
                       onChange={(e) => setForm({ ...form, type: e.target.value })}
                       className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm
-                                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                 focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                     >
                       {allTypes.map((t) => (
                         <option key={t} value={t}>{t}</option>
@@ -221,7 +221,7 @@ export default function AdminAssets() {
                   placeholder="e.g. A8404165318A6E99"
                   maxLength={16}
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm font-mono
-                             focus:outline-none focus:ring-2 focus:ring-blue-500"
+                             focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                 />
               </div>
 
@@ -237,13 +237,13 @@ export default function AdminAssets() {
                       onChange={(e) => setNewZoneName(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && addCustomZone()}
                       placeholder="New zone name"
-                      className="flex-1 px-3 py-2 rounded-lg border border-blue-300 text-sm
-                                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-3 py-2 rounded-lg border border-red-300 text-sm
+                                 focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                     />
                     <button
                       onClick={addCustomZone}
                       disabled={!newZoneName.trim()}
-                      className="px-3 py-2 bg-blue-600 disabled:bg-blue-300 text-white text-xs font-medium rounded-lg"
+                      className="px-3 py-2 bg-[#C84632] disabled:bg-[#C8463280] text-white text-xs font-medium rounded-lg"
                     >
                       Add
                     </button>
@@ -260,7 +260,7 @@ export default function AdminAssets() {
                       value={form.zone}
                       onChange={(e) => setForm({ ...form, zone: e.target.value })}
                       className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm
-                                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                 focus:outline-none focus:ring-2 focus:ring-[#C84632]"
                     >
                       <option value="">No zone</option>
                       {allZones.map((z) => (
@@ -290,7 +290,7 @@ export default function AdminAssets() {
               <button
                 onClick={handleSubmit}
                 disabled={isSaving || !form.name.trim() || !form.sensorEUI.trim()}
-                className="px-5 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white text-sm font-medium rounded-lg transition-colors"
+                className="px-5 py-2 bg-[#C84632] hover:bg-[#B03D2B] disabled:bg-[#C8463280] text-white text-sm font-medium rounded-lg transition-colors"
               >
                 {isSaving ? 'Saving...' : editingAsset ? 'Save Changes' : 'Create Asset'}
               </button>
@@ -331,7 +331,7 @@ export default function AdminAssets() {
                     <td className="px-4 py-3 text-right">
                       <button
                         onClick={() => openEditForm(asset)}
-                        className="text-blue-600 hover:text-blue-700 text-xs font-medium mr-3"
+                        className="text-[#C84632] hover:text-[#B03D2B] text-xs font-medium mr-3"
                       >
                         Edit
                       </button>

@@ -28,3 +28,4 @@ yarn-error.log*
 # Capacitor (future iOS build)
 ios/
 android/
+.vercel

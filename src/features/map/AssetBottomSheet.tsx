@@ -39,7 +39,7 @@ export default function AssetBottomSheet({ asset, onClose }: AssetBottomSheetPro
 
         {/* Asset info */}
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl shrink-0">
+          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl shrink-0">
             {typeIcon(asset.type)}
           </div>
           <div className="min-w-0 flex-1">
@@ -82,7 +82,7 @@ export default function AssetBottomSheet({ asset, onClose }: AssetBottomSheetPro
                 );
               }
             }}
-            className="flex-1 py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium
+            className="flex-1 py-2.5 px-4 bg-[#C84632] hover:bg-[#B03D2B] text-white font-medium
                        rounded-xl text-sm transition-colors"
           >
             Navigate 🧭

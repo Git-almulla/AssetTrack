@@ -39,15 +39,12 @@ export default function LoginScreen() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 px-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-red-50 to-gray-100 px-4">
       <div className="w-full max-w-md">
         {/* Logo / Branding */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4">
-            <span className="text-3xl">📡</span>
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900">AssetTrack</h1>
-          <p className="text-gray-500 mt-1">LoRaWAN Equipment Tracking</p>
+          <img src="/logo.svg" alt="Indectra" className="h-14 mx-auto mb-3" />
+          <p className="text-sm text-gray-500 tracking-wide uppercase">Smart Asset Tracking System</p>
         </div>
 
         {/* Login Card */}
@@ -79,7 +76,7 @@ export default function LoginScreen() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@company.com"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                         focus:outline-none focus:ring-2 focus:ring-[#C84632] focus:border-transparent
                          transition-shadow"
             />
           </div>
@@ -99,7 +96,7 @@ export default function LoginScreen() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400
-                           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                           focus:outline-none focus:ring-2 focus:ring-[#C84632] focus:border-transparent
                            transition-shadow"
               />
               <button
@@ -120,11 +117,11 @@ export default function LoginScreen() {
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                className="w-4 h-4 rounded border-gray-300 text-[#C84632] focus:ring-[#C84632]"
               />
               <span className="text-sm text-gray-600">Remember me</span>
             </label>
-            <button type="button" className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+            <button type="button" className="text-sm text-[#C84632] hover:text-[#B03D2B] font-medium">
               Forgot password?
             </button>
           </div>
@@ -133,9 +130,9 @@ export default function LoginScreen() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400
+            className="w-full py-3 px-4 bg-[#C84632] hover:bg-[#B03D2B] disabled:bg-[#C8463280]
                        text-white font-semibold rounded-lg shadow-sm
-                       focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                       focus:outline-none focus:ring-2 focus:ring-[#C84632] focus:ring-offset-2
                        transition-colors"
           >
             {isLoading ? (

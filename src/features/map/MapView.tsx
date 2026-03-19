@@ -263,7 +263,7 @@ function MapSearchBar({
         onBlur={() => setTimeout(() => setShowResults(false), 200)}
         className="w-full px-4 py-2.5 pl-10 bg-white rounded-xl shadow-lg border-0
                    text-sm text-gray-900 placeholder-gray-400
-                   focus:outline-none focus:ring-2 focus:ring-blue-500"
+                   focus:outline-none focus:ring-2 focus:ring-[#C84632]"
       />
       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
 

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <!-- "Indect" in red -->
+  <text x="0" y="65" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="72" fill="#C84632" letter-spacing="-2">Indect</text>
+  <!-- "r" in red -->
+  <text x="267" y="65" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="72" fill="#C84632" letter-spacing="-2">r</text>
+  <!-- brown dot on the "r" -->
+  <circle cx="282" cy="28" r="8" fill="#4A3728"/>
+  <!-- "a" in red -->
+  <text x="300" y="65" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="72" fill="#C84632" letter-spacing="-2">a</text>
+</svg>
