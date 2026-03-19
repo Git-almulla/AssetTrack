@@ -2,18 +2,14 @@
 // MapControls — My Location, Show All Assets, Layer toggle (PRD 5.2.2)
 // ============================================================
 
+import { CrosshairIcon, MaximizeIcon, LayersIcon } from '../../components';
+
 interface MapControlsProps {
   onMyLocation: () => void;
   onShowAll: () => void;
   onToggleStyle: () => void;
   currentStyle: 'streets' | 'satellite' | 'hybrid';
 }
-
-const styleLabels: Record<string, string> = {
-  streets: '🗺️',
-  satellite: '🛰️',
-  hybrid: '🌐',
-};
 
 export default function MapControls({
   onMyLocation,
@@ -26,17 +22,17 @@ export default function MapControls({
       <ControlButton
         onClick={onMyLocation}
         label="My Location"
-        icon="📍"
+        icon={<CrosshairIcon size={20} className="text-gray-700" />}
       />
       <ControlButton
         onClick={onShowAll}
         label="Show All Assets"
-        icon="🔲"
+        icon={<MaximizeIcon size={20} className="text-gray-700" />}
       />
       <ControlButton
         onClick={onToggleStyle}
         label={`Map: ${currentStyle}`}
-        icon={styleLabels[currentStyle]}
+        icon={<LayersIcon size={20} className="text-gray-700" />}
       />
     </div>
   );
@@ -49,7 +45,7 @@ function ControlButton({
 }: {
   onClick: () => void;
   label: string;
-  icon: string;
+  icon: React.ReactNode;
 }) {
   return (
     <button
@@ -57,7 +53,7 @@ function ControlButton({
       aria-label={label}
       title={label}
       className="w-11 h-11 bg-white rounded-xl shadow-lg flex items-center justify-center
-                 hover:bg-gray-50 active:bg-gray-100 transition-colors text-lg"
+                 hover:bg-gray-50 active:bg-gray-100 transition-colors"
     >
       {icon}
     </button>

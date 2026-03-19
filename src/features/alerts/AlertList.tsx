@@ -2,9 +2,10 @@
 // AlertList — Recent alerts with read/unread state (PRD 5.5)
 // ============================================================
 
-import { useEffect, useMemo, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAlertStore } from '../../stores';
+import { PinIcon, XCircleIcon, BatteryIcon, CheckCircleIcon, BellIcon } from '../../components';
 import type { AlertType } from '../../core/models';
 
 type FilterValue = 'all' | 'unread' | AlertType;
@@ -17,12 +18,12 @@ const filterOptions: { label: string; value: FilterValue }[] = [
   { label: 'Battery', value: 'lowBattery' },
 ];
 
-function alertIcon(type: AlertType): string {
+function alertIcon(type: AlertType): ReactNode {
   switch (type) {
-    case 'assetMoved': return '📍';
-    case 'assetOffline': return '🔴';
-    case 'lowBattery': return '🪫';
-    case 'assetOnline': return '🟢';
+    case 'assetMoved': return <PinIcon size={18} className="text-amber-500" />;
+    case 'assetOffline': return <XCircleIcon size={18} className="text-red-500" />;
+    case 'lowBattery': return <BatteryIcon size={18} className="text-orange-500" />;
+    case 'assetOnline': return <CheckCircleIcon size={18} className="text-green-500" />;
   }
 }
 
@@ -104,7 +105,7 @@ export default function AlertList() {
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
-            <p className="text-3xl mb-2">🔔</p>
+            <BellIcon size={32} className="text-gray-300 mx-auto mb-2" />
             <p>No alerts</p>
           </div>
         ) : (
@@ -125,7 +126,7 @@ export default function AlertList() {
                   }`}
               >
                 {/* Icon */}
-                <div className="text-xl mt-0.5 shrink-0">{alertIcon(alert.type)}</div>
+                <div className="mt-0.5 shrink-0">{alertIcon(alert.type)}</div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">

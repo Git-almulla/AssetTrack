@@ -5,7 +5,7 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAssetStore } from '../../stores';
-import { StatusBadge } from '../../components';
+import { StatusBadge, ArrowLeftIcon, NavigationIcon, MapIcon, FlagIcon, AssetTypeIcon } from '../../components';
 
 function timeAgo(dateStr: string | null): string {
   if (!dateStr) return 'Unknown';
@@ -14,17 +14,6 @@ function timeAgo(dateStr: string | null): string {
   if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
   if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
   return `${Math.floor(seconds / 86400)}d ago`;
-}
-
-function typeIcon(type: string): string {
-  switch (type) {
-    case 'Excavator': return '🏗️';
-    case 'Generator': return '⚡';
-    case 'Forklift': return '🚜';
-    case 'Compressor': return '💨';
-    case 'Crane': return '🏗️';
-    default: return '📦';
-  }
 }
 
 function signalLabel(rssi: number | null): { text: string; color: string } {
@@ -69,10 +58,10 @@ export default function AssetDetail() {
             className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500"
             aria-label="Go back"
           >
-            ←
+            <ArrowLeftIcon size={18} />
           </button>
-          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl">
-            {typeIcon(asset.type)}
+          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
+            <AssetTypeIcon type={asset.type} size={24} className="text-[#C84632]" />
           </div>
           <div className="flex-1 min-w-0">
             <h2 className="text-xl font-bold text-gray-900 truncate">{asset.name}</h2>
@@ -95,14 +84,14 @@ export default function AssetDetail() {
             className="flex-1 py-3 bg-[#C84632] hover:bg-[#B03D2B] text-white font-semibold rounded-xl
                        transition-colors text-center"
           >
-            Navigate Here 🧭
+            Navigate Here <NavigationIcon size={16} className="inline ml-1.5" />
           </button>
           <button
             onClick={() => navigate(`/`)}
             className="py-3 px-5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl
                        transition-colors"
           >
-            Show on Map
+            <MapIcon size={16} className="inline mr-1.5" />Show on Map
           </button>
         </div>
       </div>
@@ -176,7 +165,7 @@ export default function AssetDetail() {
           className="w-full py-3 bg-white border border-gray-200 text-gray-600 font-medium rounded-xl
                      hover:bg-gray-50 transition-colors"
         >
-          Report Issue 🚩
+          Report Issue <FlagIcon size={16} className="inline ml-1.5" />
         </button>
       </div>
     </div>

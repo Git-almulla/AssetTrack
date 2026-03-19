@@ -6,7 +6,7 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores';
-import { Logo } from '../../components';
+import { Logo, EyeIcon, EyeOffIcon } from '../../components';
 
 export default function LoginScreen() {
   const navigate = useNavigate();
@@ -108,7 +108,7 @@ export default function LoginScreen() {
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? <EyeOffIcon size={18} /> : <EyeIcon size={18} />}
               </button>
             </div>
           </div>

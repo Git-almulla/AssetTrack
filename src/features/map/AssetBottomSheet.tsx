@@ -4,7 +4,7 @@
 // ============================================================
 
 import { useNavigate } from 'react-router-dom';
-import { StatusBadge } from '../../components';
+import { StatusBadge, XIcon, NavigationIcon, BatteryIcon, AssetTypeIcon } from '../../components';
 import type { Asset } from '../../core/models';
 
 interface AssetBottomSheetProps {
@@ -34,13 +34,13 @@ export default function AssetBottomSheet({ asset, onClose }: AssetBottomSheetPro
                      text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
           aria-label="Close"
         >
-          ✕
+          <XIcon size={16} />
         </button>
 
         {/* Asset info */}
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl shrink-0">
-            {typeIcon(asset.type)}
+          <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center shrink-0">
+            <AssetTypeIcon type={asset.type} size={24} className="text-[#C84632]" />
           </div>
           <div className="min-w-0 flex-1">
             <h3 className="text-lg font-semibold text-gray-900 truncate">{asset.name}</h3>
@@ -57,7 +57,7 @@ export default function AssetBottomSheet({ asset, onClose }: AssetBottomSheetPro
             <>
               <span className="text-gray-400">|</span>
               <span className={`font-medium ${asset.batteryLevel < 20 ? 'text-red-500' : 'text-gray-600'}`}>
-                🔋 {asset.batteryLevel}%
+                <BatteryIcon size={14} level={asset.batteryLevel} className="inline" /> {asset.batteryLevel}%
               </span>
             </>
           )}
@@ -85,21 +85,10 @@ export default function AssetBottomSheet({ asset, onClose }: AssetBottomSheetPro
             className="flex-1 py-2.5 px-4 bg-[#C84632] hover:bg-[#B03D2B] text-white font-medium
                        rounded-xl text-sm transition-colors"
           >
-            Navigate 🧭
+            Navigate <NavigationIcon size={16} className="inline ml-1" />
           </button>
         </div>
       </div>
     </div>
   );
-}
-
-function typeIcon(type: string): string {
-  switch (type) {
-    case 'Excavator': return '🏗️';
-    case 'Generator': return '⚡';
-    case 'Forklift': return '🚜';
-    case 'Compressor': return '💨';
-    case 'Crane': return '🏗️';
-    default: return '📦';
-  }
 }

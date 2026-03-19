@@ -12,6 +12,7 @@ import { MockWebSocket } from '../../core/networking';
 import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM } from '../../utils/constants';
 import MapControls from './MapControls';
 import AssetBottomSheet from './AssetBottomSheet';
+import { SearchIcon } from '../../components';
 import type { Asset } from '../../core/models';
 
 const STATUS_COLORS: Record<string, string> = {
@@ -265,7 +266,9 @@ function MapSearchBar({
                    text-sm text-gray-900 placeholder-gray-400
                    focus:outline-none focus:ring-2 focus:ring-[#C84632]"
       />
-      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+      <span className="absolute left-3 top-1/2 -translate-y-1/2">
+        <SearchIcon size={16} className="text-gray-400" />
+      </span>
 
       {showResults && filtered.length > 0 && (
         <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-lg max-h-60 overflow-y-auto z-20">

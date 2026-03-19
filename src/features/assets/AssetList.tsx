@@ -5,7 +5,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAssetStore } from '../../stores';
-import { StatusBadge } from '../../components';
+import { StatusBadge, SearchIcon, XIcon, BatteryIcon, AssetTypeIcon } from '../../components';
 import type { AssetStatus } from '../../core/models';
 
 type SortKey = 'name' | 'lastSeenAt' | 'status';
@@ -31,17 +31,6 @@ function timeAgo(dateStr: string | null): string {
   if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
   if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
   return `${Math.floor(seconds / 86400)}d ago`;
-}
-
-function typeIcon(type: string): string {
-  switch (type) {
-    case 'Excavator': return '🏗️';
-    case 'Generator': return '⚡';
-    case 'Forklift': return '🚜';
-    case 'Compressor': return '💨';
-    case 'Crane': return '🏗️';
-    default: return '📦';
-  }
 }
 
 export default function AssetList() {
@@ -107,13 +96,13 @@ export default function AssetList() {
                        text-sm text-gray-900 placeholder-gray-400
                        focus:outline-none focus:ring-2 focus:ring-[#C84632] focus:bg-white"
           />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2"><SearchIcon size={16} className="text-gray-400" /></span>
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
-              ✕
+              <XIcon size={14} />
             </button>
           )}
         </div>
@@ -168,7 +157,7 @@ export default function AssetList() {
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
-            <p className="text-3xl mb-2">🔍</p>
+            <SearchIcon size={32} className="text-gray-300 mx-auto mb-2" />
             <p>No assets found</p>
           </div>
         ) : (
@@ -182,8 +171,8 @@ export default function AssetList() {
                            transition-all text-left"
               >
                 {/* Type icon */}
-                <div className="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center text-xl shrink-0">
-                  {typeIcon(asset.type)}
+                <div className="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center shrink-0">
+                  <AssetTypeIcon type={asset.type} size={22} className="text-[#C84632]" />
                 </div>
 
                 {/* Info */}
@@ -202,7 +191,7 @@ export default function AssetList() {
                   <span className="text-[11px] text-gray-400">{timeAgo(asset.lastSeenAt)}</span>
                   {asset.batteryLevel != null && (
                     <span className={`text-[11px] font-medium ${asset.batteryLevel < 20 ? 'text-red-500' : 'text-gray-400'}`}>
-                      🔋 {asset.batteryLevel}%
+                      <BatteryIcon size={12} level={asset.batteryLevel} className="inline" /> {asset.batteryLevel}%
                     </span>
                   )}
                 </div>

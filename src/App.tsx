@@ -1,6 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { useOnlineStatus } from './hooks';
-import { OfflineBanner, Logo } from './components';
+import { OfflineBanner, Logo, MapIcon, BoxIcon, BellIcon, SettingsIcon, LogOutIcon } from './components';
 import { useAuthStore, useAlertStore } from './stores';
 
 // Feature screens
@@ -33,9 +33,10 @@ function AppShell() {
           </span>
           <button
             onClick={logout}
-            className="text-sm text-gray-400 hover:text-red-500 transition-colors"
+            className="flex items-center gap-1 text-sm text-gray-400 hover:text-red-500 transition-colors"
             aria-label="Sign out"
           >
+            <LogOutIcon size={16} />
             Sign out
           </button>
         </div>
@@ -56,10 +57,10 @@ function AppShell() {
 
       {/* Bottom tab bar — mobile-style navigation */}
       <nav className="flex items-center justify-around border-t border-gray-200 bg-white py-2 px-4 shrink-0">
-        <TabLink to="/" label="Map" icon="🗺️" />
-        <TabLink to="/assets" label="Assets" icon="📦" />
-        <TabLink to="/alerts" label="Alerts" icon="🔔" badge={unreadCount} />
-        {user?.role === 'admin' && <TabLink to="/admin/assets" label="Admin" icon="⚙️" />}
+        <TabLink to="/" label="Map" icon={<MapIcon size={20} />} />
+        <TabLink to="/assets" label="Assets" icon={<BoxIcon size={20} />} />
+        <TabLink to="/alerts" label="Alerts" icon={<BellIcon size={20} />} badge={unreadCount} />
+        {user?.role === 'admin' && <TabLink to="/admin/assets" label="Admin" icon={<SettingsIcon size={20} />} />}
       </nav>
     </div>
   );
@@ -73,7 +74,7 @@ function TabLink({
 }: {
   to: string;
   label: string;
-  icon: string;
+  icon: React.ReactNode;
   badge?: number;
 }) {
   return (
@@ -85,7 +86,7 @@ function TabLink({
         }`
       }
     >
-      <span className="relative text-xl">
+      <span className="relative">
         {icon}
         {badge !== undefined && badge > 0 && (
           <span className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
