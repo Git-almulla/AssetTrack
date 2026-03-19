@@ -12,8 +12,6 @@ export const MOCK_TENANT_ID = 'b1e2c3d4-5678-9abc-def0-111111111111';
 // Centre point: Dubai area (25.2048, 55.2708)
 // 500m x 500m ≈ ±0.0025 lat/lng spread
 
-const assetTypes = ['Excavator', 'Generator', 'Forklift', 'Compressor', 'Crane'] as const;
-
 function makeAsset(
   index: number,
   name: string,
